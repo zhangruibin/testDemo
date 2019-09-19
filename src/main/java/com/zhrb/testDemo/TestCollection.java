@@ -21,6 +21,7 @@ public class TestCollection {
         String[] str = new String[] { "a", "b" };
         List list = Arrays.asList(str);
         System.out.println(list.get(0));
+        System.out.println("------------------------------");
         System.out.println(list.add("10086"));
     }
 }
