@@ -1,8 +1,6 @@
 package com.zhrb.testDemo;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @ClassName TestRemove
@@ -34,5 +32,9 @@ public class TestRemove {
                 it.remove();
             }
         }
+    }
+
+    private static void foreachMap(){
+        Map map = new HashMap();
     }
 }
