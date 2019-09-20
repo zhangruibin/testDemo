@@ -15,7 +15,7 @@ import java.util.concurrent.*;
  */
 public class TestReadExcel {
 
-    private final static File file = new File("C:\\Users\\Administrator\\Desktop\\工作簿.xlsx");
+    private final static File file = new File("C:\\Users\\Administrator\\Desktop\\工作簿.xls");
 
     public static void main(String[] args) throws Exception {
         operaterExcel3();
