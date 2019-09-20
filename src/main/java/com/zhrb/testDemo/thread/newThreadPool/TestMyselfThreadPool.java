@@ -25,16 +25,20 @@ public class TestMyselfThreadPool {
     private final static File file = new File("C:\\Users\\Administrator\\Desktop\\工作簿.xls");
 
     public static void main(String[] args) {
+        //factory形式
         CustomThreadFactory threadFactory = new CustomThreadFactory();
+        //异常处理逻辑
         CustomRejectedExecutionHandler customRejectedExecutionHandler = new CustomRejectedExecutionHandler();
-        //创建有界工作队列
+        //工作队列形式，要定义有界的，否则线程量多的话会OOM
         BlockingDeque<Runnable> blockingDeque = new LinkedBlockingDeque<>();
+        //创建线程池管理
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(4,8,10,
                 TimeUnit.SECONDS, blockingDeque, threadFactory, customRejectedExecutionHandler);
+        //使用自定义线程池去读取文件
         operaterExcel2(threadPoolExecutor);
     }
 
-    public static void operaterExcel2(ThreadPoolExecutor es){
+    private static void operaterExcel2(ThreadPoolExecutor es){
 
         FileInputStream fileInputStream = null;
         Workbook wb = null;
@@ -43,7 +47,7 @@ public class TestMyselfThreadPool {
         int threadNum = 4;
         //存放最终结果的map
         final Map<String,List<ContentValueEntity>> map = new HashMap<>(threadNum);
-        // 使用线程池进行线程管理（面试必问）
+        // 使用线程池进行线程管理
         //final ExecutorService es = Executors.newCachedThreadPool();
 
         try {
