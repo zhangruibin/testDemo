@@ -1,5 +1,6 @@
 package com.zhrb.testDemo.thread.poiReadExcel;
 
+import com.microsoft.schemas.office.visio.x2012.main.CellType;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
@@ -42,9 +43,6 @@ public class TestReadExcel {
         //单元格样式类
         CellStyle cellStyle = wb.createCellStyle();
         cellStyle.setDataFormat(creationHelper.createDataFormat().getFormat("yyyy-mm-dd hh:mm:ss"));
-        //单元格对其方式
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);
-        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
         //设置列宽
         sheet.setColumnWidth(0,9999);
         for (int rowNum = 0; rowNum < 2000; rowNum ++){
@@ -62,7 +60,7 @@ public class TestReadExcel {
                 }else if (cellNum == 3){
                     row.createCell(3).setCellValue(true);
                 }else if (cellNum == 4){
-                    row.createCell(4).setCellValue(CellType.NUMERIC.getCode());
+                    row.createCell(4).setCellValue(Math.random());
                 }else{
                     row.createCell(5).setCellValue(false);
                 }

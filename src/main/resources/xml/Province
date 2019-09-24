@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<provinceNameAndCode>
+    <code name="province" description="省份">
+        <parameter id="01" name="北京"/>
+        <parameter id="02" name="天津"/>
+        <parameter id="03" name="河北省"/>
+        <parameter id="04" name="山西省"/>
+        <parameter id="05" name="内蒙古"/>
+        <parameter id="06" name="辽宁省"/>
+        <parameter id="07" name="吉林省"/>
+        <parameter id="08" name="黑龙江"/>
+        <parameter id="09" name="上海"/>
+        <parameter id="10" name="江苏省"/>
+        <parameter id="11" name="浙江省"/>
+        <parameter id="12" name="安徽省"/>
+        <parameter id="13" name="福建省"/>
+        <parameter id="14" name="江西省"/>
+        <parameter id="15" name="山东省"/>
+        <parameter id="16" name="河南省"/>
+        <parameter id="17" name="湖北省"/>
+        <parameter id="18" name="湖南省"/>
+        <parameter id="19" name="广东省"/>
+        <parameter id="20" name="广西省"/>
+        <parameter id="21" name="海南省"/>
+        <parameter id="22" name="重庆"/>
+        <parameter id="23" name="四川省"/>
+        <parameter id="24" name="贵州省"/>
+        <parameter id="25" name="云南省"/>
+        <parameter id="26" name="西藏"/>
+        <parameter id="27" name="陕西省"/>
+        <parameter id="28" name="甘肃省"/>
+        <parameter id="29" name="青海省"/>
+        <parameter id="30" name="宁夏省"/>
+        <parameter id="31" name="新疆"/>
+        <parameter id="32" name="澳门"/>
+        <parameter id="33" name="香港"/>
+        <parameter id="34" name="台湾"/>
+    </code>
+</provinceNameAndCode>

@@ -1,5 +1,7 @@
 package com.zhrb.testDemo;
 
+import com.zhrb.entity.Student;
+
 /**
  * @ClassName DoubleCheck
  * @Description TODO
@@ -8,8 +10,16 @@ package com.zhrb.testDemo;
  * @Version
  */
 public class DoubleCheck {
+    //1、私有静态变量
     private static volatile DoubleCheck doubleCheck = null;
-    private  DoubleCheck(){}
+    //业务对象
+    private Student student;
+    //2、私有构造方法
+    private  DoubleCheck(){
+        student = new Student();
+    }
+    //3、公有静态方法，获取实例对象
+    //加上同步锁 synchronized，线程安全
     public static synchronized DoubleCheck getDoubleCheck(DoubleCheck doubleCheck){
         if (doubleCheck == null){
             synchronized (DoubleCheck.class){
@@ -19,5 +29,9 @@ public class DoubleCheck {
             }
         }
         return doubleCheck;
+    }
+    //4、公有业务方法
+    public String getStudentName(){
+        return student.getName();
     }
 }

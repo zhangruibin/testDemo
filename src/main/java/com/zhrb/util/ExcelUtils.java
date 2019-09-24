@@ -1,3 +1,4 @@
+/*
 package com.zhrb.util;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -14,13 +15,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+*/
 /**
  * @Author : WuWei
  * @Date : Created on 11:04 2018/3/6
  * @Description: 读取Excel工具类
  * @Version : 1.0
  * @Modified By :
- **/
+ **//*
+
 
 public class ExcelUtils {
     public static List<Map<String,String>> readFile(MultipartFile file){
@@ -124,3 +127,4 @@ public class ExcelUtils {
         return cellValue;
     }
 }
+*/
