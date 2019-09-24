@@ -12,7 +12,7 @@ import java.util.*;
 
 /**
  * @ClassName SelectProvinceUtil
- * @Description TODO
+ * @Description TODO 测试注释是否有效
  * @Author zhrb
  * @Date 2019/9/24 10:22
  * @Version
@@ -56,7 +56,14 @@ public class SelectProvinceUtil {
         }
     }
 
-    //3、公有静态方法，获取实例对象
+    /**
+    *3、公有静态方法，获取实例对象
+    * @Description 3、公有静态方法，获取实例对象
+    * @Param filePath
+    * @Returu selectProvinceUtil
+    * @Author zhrb
+    * @Date   16:12 2019/9/24
+    **/
     public static synchronized SelectProvinceUtil getInstance(String filePath){
         if(null == selectProvinceUtil){
             selectProvinceUtil = new SelectProvinceUtil(filePath);
