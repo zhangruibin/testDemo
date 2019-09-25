@@ -11,11 +11,10 @@ import java.util.*;
 
 
 /**
- * @ClassName SelectProvinceUtil
- * @Description TODO 测试注释是否有效
- * @Author zhrb
- * @Date 2019/9/24 10:22
- * @Version
+ * @since 0.1
+ * @author zhrb
+ *@date 2019/9/24 10:22
+ *@version
  */
 public class SelectProvinceUtil {
     //1、私有静态变量
@@ -55,15 +54,6 @@ public class SelectProvinceUtil {
             e.printStackTrace();
         }
     }
-
-    /**
-    *3、公有静态方法，获取实例对象
-    * @Description 3、公有静态方法，获取实例对象
-    * @Param filePath
-    * @Returu selectProvinceUtil
-    * @Author zhrb
-    * @Date   16:12 2019/9/24
-    **/
     public static synchronized SelectProvinceUtil getInstance(String filePath){
         if(null == selectProvinceUtil){
             selectProvinceUtil = new SelectProvinceUtil(filePath);

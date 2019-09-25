@@ -11,8 +11,8 @@ import lombok.Data;
  */
 @Data
 public class Province {
+    /**id*/
     private String id;
-
     private String name;
 
     public Province(String id, String name) {

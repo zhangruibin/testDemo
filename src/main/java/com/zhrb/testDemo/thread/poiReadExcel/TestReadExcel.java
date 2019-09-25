@@ -75,13 +75,15 @@ public class TestReadExcel {
         //关闭输出流
         fileOutputStream.close();
     }
-    /**
-     * @Author zhrb
-     * @Description CyclicBarrier + 线程池处理
-     * @Date 下午2:16 2018/11/20
-     * @Param []
-     * @return void
-     **/
+     /**
+      * @Description
+      * @Param
+      * @Return
+      * @Throws
+      * @Author zhrb
+      * @Date 2019/9/25
+      * @Time 11:12
+      **/
     public static void operaterExcel2(){
         
         FileInputStream fileInputStream = null;
