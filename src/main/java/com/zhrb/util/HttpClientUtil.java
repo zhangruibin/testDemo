@@ -40,7 +40,7 @@ public class HttpClientUtil {
 			// 4.读取内容
 			byte[] responseBody = getMethod.getResponseBody();
 			// 5.处理返回的内容
-			responseMsg = new String(responseBody);
+			responseMsg = new String(responseBody,"GB2312");
 
 		} catch (HttpException e) {
 			//e.printStackTrace();

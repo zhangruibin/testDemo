@@ -1,5 +1,6 @@
 package com.zhrb.testDemo;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.LongAdder;
@@ -13,7 +14,9 @@ import java.util.concurrent.atomic.LongAdder;
  */
 public class TestCount {
     public static void main(String[] args) {
-        Math.random();
+        double random = Math.random();
+        Random rnd = new Random();
+        rnd.nextInt();
         AtomicInteger count = new AtomicInteger();
         LongAdder longAdder = new LongAdder();
     }
