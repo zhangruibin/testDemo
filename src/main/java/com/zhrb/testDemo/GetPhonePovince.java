@@ -38,10 +38,14 @@ public class GetPhonePovince {
         int index=response.indexOf("=");
         String pro = response.substring(index+1);
         JSONObject jsonObject = JSON.parseObject(pro);
-
-        String telString = (String)jsonObject.get("telString");
-        String province = (String)jsonObject.get("province");
-        phoneAndPro = telString + "-" + province;
+        if ("".equals(pro) || pro == null){
+            System.out.println("pro:"+pro);
+            throw new RuntimeException();
+        }else {
+            String telString = (String)jsonObject.get("telString");
+            String province = (String)jsonObject.get("province");
+            phoneAndPro = telString + "-" + province;
+        }
         return phoneAndPro;
     }
 }

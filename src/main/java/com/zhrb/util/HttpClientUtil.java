@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * HttpClient 工具类 以get/post的方式发送数据到指定的http接口
  * 
- * @author liyuanyuan
+ * @author zhrb
  * 
  */
 public class HttpClientUtil {
