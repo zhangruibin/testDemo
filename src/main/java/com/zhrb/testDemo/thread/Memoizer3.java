@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 /**
  * @ClassName Memoizer3
  * @Description
- * @Author Administrator
+ * @Author zhrb
  * @Date 2019/10/29 15:44
  * @Version
  */
@@ -32,9 +32,12 @@ public class Memoizer3<A,V> implements Computable<A, V> {
                 }
             };
             FutureTask<V> futureTask = new FutureTask<V>(eval);
-            f = futureTask;
-            catche.put(arg,futureTask);
-            futureTask.run();//调用computable.compute();
+
+            catche.putIfAbsent(arg,futureTask);
+            if (f == null){
+                f = futureTask;
+                futureTask.run();//调用computable.compute();
+            }
         }
         try {
             return f.get();
