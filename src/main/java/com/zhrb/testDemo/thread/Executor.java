@@ -16,9 +16,7 @@ public class Executor {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 20, 20, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<Runnable>(10));
         AtomicInteger atomicInteger = new AtomicInteger();
-        threadPoolExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
+        threadPoolExecutor.execute(()-> {
                 atomicInteger.getAndIncrement();
                 System.out.println("Test thread pool.");
                 if (atomicInteger.get() == 3){
@@ -28,7 +26,6 @@ public class Executor {
                     threadPoolExecutor.shutdownNow();
                     System.out.println(threadPoolExecutor.isShutdown());
                 }
-            }
         });
     }
 }
