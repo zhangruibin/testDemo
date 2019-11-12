@@ -8,6 +8,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,7 +24,11 @@ import java.util.concurrent.*;
  * @Version
  */
 public class TestMyselfThreadPool {
-    private final static File file = new File("C:\\Users\\Administrator\\Desktop\\工作簿.xls");
+    private final static String fileName = "163672.xls";
+
+    private final static String pathName = "C:\\Users\\Administrator\\Desktop\\";
+
+    private final static File file = new File(pathName + fileName);
 
     public static void main(String[] args) {
         //factory形式
@@ -116,5 +122,39 @@ public class TestMyselfThreadPool {
         }  catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private static void countDownLuanchReadExce(ThreadPoolExecutor es) throws IOException {
+        FileInputStream fileInputStream = null;
+        Workbook wb = null;
+        Sheet sheet = null;
+        int threadNum = Runtime.getRuntime().availableProcessors();
+        //存放结果
+        Map<String,List<PhoneNum>> resultMap = new HashMap<>(threadNum);
+        //声明多线程模型
+        CountDownLatch latch = new CountDownLatch(threadNum);
+        //开始读取文件
+        try {
+            fileInputStream = new FileInputStream(file);
+            //把文件流放入到创建的文件模型中
+            wb = WorkbookFactory.create(fileInputStream);
+            //读取第一个sheet,起始位为0
+            sheet = wb.getSheetAt(0);
+            //开始读取sheet的行数据
+            int firstNum = sheet.getFirstRowNum();
+            int lastNum = sheet.getLastRowNum();
+            //计算得出所有的行数,第一行为标题头
+            int totalNum = lastNum - firstNum + 1;
+            // 计算每个线程处理的行数，因为不一定能够整除，所以要分配一个线程多做或者少做点
+            DecimalFormat decimalFormat = new DecimalFormat("0.00");
+            String sepNum = decimalFormat.format((float)totalNum/threadNum);
+            //这里就看个人策略了，是留最后一个线程少干一些，还是最后一个多干一些，本人选择少干一些
+            System.identityHashCode(threadNum);
+        }catch (Exception ec){
+            ec.printStackTrace();
+        }finally {
+            fileInputStream.close();
+        }
+
     }
 }
